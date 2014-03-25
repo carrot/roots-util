@@ -1,6 +1,8 @@
 Roots Util
 ----------
 
+[![npm](https://badge.fury.io/js/roots-util.png)](http://badge.fury.io/js/roots-util) [![tests](https://travis-ci.org/carrot/roots-util.png?branch=master)](https://travis-ci.org/carrot/roots-util) [![dependencies](https://david-dm.org/carrot/roots-util.png?theme=shields.io)](https://david-dm.org/carrot/roots-util)
+
 A utility that makes building roots extensions a little easier.
 
 ### Why should you care?
@@ -53,9 +55,9 @@ fs: ->
 
 This example pulls all non-ignored files in the css directory and tests whether we have a match in the `fs.detect` function. There are many other ways this can be used, just a quick example here.
 
-#### output_path(path)
+#### output_path(path, ext)
 
-Given the path to a source file in a roots project, produces the output path that it will be written to. Returns a [vinyl](https://github.com/wearefractal/vinyl)-wrapped file object.
+Given the path to a source file in a roots project, produces the output path that it will be written to. Accepts an optional extension override (by default will return with the same file extension as the input). Returns a [vinyl](https://github.com/wearefractal/vinyl)-wrapped file object.
 
 **Example:**     
 ```coffee
