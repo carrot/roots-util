@@ -69,3 +69,8 @@ compile_hooks: ->
 ```
 
 In this example, we calculate the output path, add a `.min` extension, and pass that path in as the new path to be written. Again, contrived and this utility function can be used in many other ways, just a quick usage example.
+
+### License & Contributing
+
+- Details on the license [can be found here](LICENSE.md)
+- Details on running tests and contributing [can be found here](contributing.md)

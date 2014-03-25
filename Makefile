@@ -1,12 +1,12 @@
 build:
-  mv lib src
-  coffee -o lib -c src
+	mv lib src
+	coffee -o lib -c src
 
 unbuild:
-  rm -rf lib
-  mv src lib
+	rm -rf lib
+	mv src lib
 
 publish:
-  make build
-  npm publish .
-  make unbuild
+	make build
+	npm publish .
+	make unbuild
