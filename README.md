@@ -25,7 +25,7 @@ class TestExtension
     @util = new RootsUtil(@roots)
 ```
 
-##### write(path, contents)
+#### write(path, contents)
 
 Writes a given relative path (starting at the roots public output directory) with the given content.
 
@@ -37,7 +37,7 @@ compile_hooks:
 
 This example will write to `public/testing.html` (or whatever the output directory was set to), and will also create any directories that were not already present. For example, if you wanted to write to `public/foobar/testing.html`, and the `foobar` directory didn't exist, it would create that directory rather than erroring out.
 
-##### files(minimatch_str)
+#### files(minimatch_str)
 
 Given a minimatch string, this function will grab all files in your roots project that match, excluding directories and files that were ignored by the roots config. Returns an array of [vinyl](https://github.com/wearefractal/vinyl)-wrapped files.
 
@@ -53,7 +53,7 @@ fs: ->
 
 This example pulls all non-ignored files in the css directory and tests whether we have a match in the `fs.detect` function. There are many other ways this can be used, just a quick example here.
 
-##### output_path(path)
+#### output_path(path)
 
 Given the path to a source file in a roots project, produces the output path that it will be written to. Returns a [vinyl](https://github.com/wearefractal/vinyl)-wrapped file object.
 
