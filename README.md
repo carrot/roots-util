@@ -39,7 +39,7 @@ This example will write to `public/testing.html` (or whatever the output directo
 
 #### files(minimatch_str)
 
-Given a minimatch string, this function will grab all files in your roots project that match, excluding directories and files that were ignored by the roots config. Returns an array of [vinyl](https://github.com/wearefractal/vinyl)-wrapped files.
+Given a minimatch string or array of minimatch strings, this function will grab all files in your roots project that match, excluding directories and files that were ignored by the roots config. Returns an array of [vinyl](https://github.com/wearefractal/vinyl)-wrapped files.
 
 **Example:**     
 ```coffee
