@@ -68,6 +68,6 @@ describe 'output_path', ->
       .on('error', done)
       .on('test', (r) ->
         ++expects
-        r.relative.should.eql('public/foo.html')
+        r.relative.should.eql('foo.html')
       ).on('done', (-> if expects then done() else done('not fired')))
       .compile()

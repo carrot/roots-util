@@ -62,6 +62,6 @@ class RootsUtil
   output_path: (_path, ext) ->
     f = new File(base: @roots.root, path: path.join(@roots.root, _path))
     out = if ext then @roots.config.out(f, ext) else @roots.config.out(f)
-    new File(base: @roots.root, path: out)
+    new File(base: @roots.config.output_path(), path: out)
 
 module.exports = RootsUtil
