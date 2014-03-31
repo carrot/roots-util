@@ -70,7 +70,7 @@ class Helpers
       install_dependencies: (base, cb) ->
         tasks = []
 
-        for d in glob.sync("#{base}/package.json")
+        for d in glob.sync("#{_path(base)}/package.json")
           p = path.dirname(d)
           if fs.existsSync(path.join(p, 'node_modules')) then continue
           tasks.push nodefn.call(run, "npm i", { cwd: p })
