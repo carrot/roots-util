@@ -86,55 +86,55 @@ helpers2 = new RootsUtil.Helpers(base: path.join(__dirname, 'fixtures'))
 
 If you instantiate your helper with a base path, that base will be joined to any file path that's passed into any of the helper functions. Otherwise, you'll need to pass the full path. This `helpers` instance has a bunch of functions you can use to help out with your tests, documented below:
 
-#### file.exists(path)
+##### file.exists(path)
 tests whether a file exists
 
-#### file.doesnt_exist(path)
+##### file.doesnt_exist(path)
 tests whether a file doesn't exist
 
-#### file.has_content(path)
+##### file.has_content(path)
 tests whether a file contains any content
 
-#### file.is_empty(path)
+##### file.is_empty(path)
 tests whether a file contains no content
 
-#### file.contains(path, string)
+##### file.contains(path, string)
 tests whether a file's contents contain a given string
 
-#### file.contains_match(path, regex)
+##### file.contains_match(path, regex)
 tests whether a file's content match a given regex
 
-#### file.matches_file(path, path2)
+##### file.matches_file(path, path2)
 tests whether a file's contents match a second file's contents
 
-#### directory.is_directory(path)
+##### directory.is_directory(path)
 tests whether a path is a directory
 
-#### directory.exists(path)
+##### directory.exists(path)
 tests whether a path is a directory and exists
 
-#### directory.doesnt_exist(path)
+##### directory.doesnt_exist(path)
 tests whether a path does not exist
 
-#### directory.has_contents(path)
+##### directory.has_contents(path)
 tests whether a directory contains files
 
-#### directory.is_empty(path)
+##### directory.is_empty(path)
 tests whether a directory doesn't contain files
 
-#### directory.contains_file(dirpath, filename)
+##### directory.contains_file(dirpath, filename)
 tests whether a directory contains a file with a given filename
 
-#### directory.matches_dir(path, path2)
+##### directory.matches_dir(path, path2)
 tests whether a directory's contents match that of a second directory
 
-#### project.compile(Roots, path, callback)
+##### project.compile(Roots, path, callback)
 compiles a roots project given the `Roots` class, a path for the project, and a callback
 
-#### project.remove_folders(minimatchString)
+##### project.remove_folders(minimatchString)
 given a minimatch string, removes all folders that match (good for removing public folders after tests have completed)
 
-#### project.install_dependencies(baseDir, callback)
+##### project.install_dependencies(baseDir, callback)
 given a base directory (minimatch compatible), installs dependencies for any matches of `base/*/package.json` then hits a callback
 
 ### License & Contributing
