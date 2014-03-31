@@ -135,7 +135,7 @@ compiles a roots project given the `Roots` class, a path for the project, and a 
 given a minimatch string, removes all folders that match (good for removing public folders after tests have completed)
 
 ##### project.install_dependencies(baseDir, callback)
-given a base directory (minimatch compatible), installs dependencies for any matches of `base/*/package.json` then hits a callback
+given a base directory (minimatch compatible), installs dependencies for any matches of `baseDir/package.json` then hits a callback
 
 ### License & Contributing
 
