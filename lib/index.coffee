@@ -65,3 +65,4 @@ class RootsUtil
     new File(base: @roots.config.output_path(), path: out)
 
 module.exports = RootsUtil
+module.exports.Helpers = require('./test_helpers')
