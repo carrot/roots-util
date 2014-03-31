@@ -137,14 +137,18 @@ describe 'helpers', ->
     @h1.directory.doesnt_exist(path.join(_path, 'helpers/sdff')).should.be.ok
     @h2.directory.doesnt_exist('helpers/sehfewf').should.be.ok
 
-  it 'directory.contains_files should work', ->
-    @h1.directory.contains_files(path.join(_path, 'helpers/folda')).should.be.ok
-    @h2.directory.contains_files('helpers/folda').should.be.ok
+  it 'directory.has_contents should work', ->
+    @h1.directory.has_contents(path.join(_path, 'helpers/folda')).should.be.ok
+    @h2.directory.has_contents('helpers/folda').should.be.ok
 
   # empty folders ignored by git, so this fails on travis
   it.skip 'directory.is_empty should work', ->
     @h1.directory.is_empty(path.join(_path, 'helpers/empty_folda')).should.be.ok
     @h2.directory.is_empty('helpers/empty_folda').should.be.ok
+
+  it 'directory.contains_file should work', ->
+    @h1.directory.contains_file(path.join(_path, 'helpers/folda'), 'stuff.html').should.be.ok
+    @h2.directory.contains_file('helpers/folda', 'stuff.html').should.be.ok
 
   it 'directory.matches_dir should work', ->
     d1 = path.join(_path, 'helpers/folda')

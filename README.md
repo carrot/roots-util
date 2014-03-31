@@ -70,6 +70,73 @@ compile_hooks: ->
 
 In this example, we calculate the output path, add a `.min` extension, and pass that path in as the new path to be written. Again, contrived and this utility function can be used in many other ways, just a quick usage example.
 
+### Test Helpers
+
+Roots-Util also includes a number of test helpers that might make testing your extensions a bit easier. The test helpers can be accessed as seen below:
+
+```coffee
+path      = require 'path'
+RootsUtil = require 'root-util'
+
+# basic initialization
+helpers = new RootsUtil.Helpers
+# you can also initialize with a base fixtures directory, for example
+helpers2 = new RootsUtil.Helpers(base: path.join(__dirname, 'fixtures'))
+```
+
+If you instantiate your helper with a base path, that base will be joined to any file path that's passed into any of the helper functions. Otherwise, you'll need to pass the full path. This `helpers` instance has a bunch of functions you can use to help out with your tests, documented below:
+
+#### file.exists(path)
+tests whether a file exists
+
+#### file.doesnt_exist(path)
+tests whether a file doesn't exist
+
+#### file.has_content(path)
+tests whether a file contains any content
+
+#### file.is_empty(path)
+tests whether a file contains no content
+
+#### file.contains(path, string)
+tests whether a file's contents contain a given string
+
+#### file.contains_match(path, regex)
+tests whether a file's content match a given regex
+
+#### file.matches_file(path, path2)
+tests whether a file's contents match a second file's contents
+
+#### directory.is_directory(path)
+tests whether a path is a directory
+
+#### directory.exists(path)
+tests whether a path is a directory and exists
+
+#### directory.doesnt_exist(path)
+tests whether a path does not exist
+
+#### directory.has_contents(path)
+tests whether a directory contains files
+
+#### directory.is_empty(path)
+tests whether a directory doesn't contain files
+
+#### directory.contains_file(dirpath, filename)
+tests whether a directory contains a file with a given filename
+
+#### directory.matches_dir(path, path2)
+tests whether a directory's contents match that of a second directory
+
+#### project.compile(Roots, path, callback)
+compiles a roots project given the `Roots` class, a path for the project, and a callback
+
+#### project.remove_folders(minimatchString)
+given a minimatch string, removes all folders that match (good for removing public folders after tests have completed)
+
+#### project.install_dependencies(baseDir, callback)
+given a base directory (minimatch compatible), installs dependencies for any matches of `base/*/package.json` then hits a callback
+
 ### License & Contributing
 
 - Details on the license [can be found here](LICENSE.md)

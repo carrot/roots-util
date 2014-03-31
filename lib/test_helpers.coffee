@@ -6,6 +6,7 @@ rimraf = require 'rimraf'
 W      = require 'when'
 nodefn = require 'when/node'
 run    = require('child_process').exec
+_      = require 'lodash'
 
 ###*
  * @class Helpers
@@ -47,10 +48,12 @@ class Helpers
         stat.isDirectory() and fs.existsSync(dir)
       doesnt_exist: (dir) ->
         !fs.existsSync(_path(dir))
-      contains_files: (dir) ->
+      has_contents: (dir) ->
         fs.readdirSync(_path(dir)).length > 0
       is_empty: (dir) ->
         fs.readdirSync(_path(dir)).length < 1
+      contains_file: (dir, file) ->
+        _.contains(fs.readdirSync(_path(dir)), file)
       matches_dir: (dir, expected) ->
         dir = _path(dir)
         expected = _path(expected)
