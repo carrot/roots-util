@@ -24,7 +24,7 @@ class RootsUtil
     output_path = path.join(@roots.config.output_path(), _path)
 
     node.call(mkdirp, path.dirname(output_path))
-      .then(node.lift(fs.writeFile, output_path, contents))
+      .then(-> node.call(fs.writeFile, output_path, contents))
 
   ###*
    * Given a minimatch string or array of minimatch strings, scans the
