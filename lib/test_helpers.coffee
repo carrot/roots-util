@@ -18,7 +18,7 @@ class Helpers
   constructor: (opts = {}) ->
 
     _path = (f) ->
-      if opts.base? then path.join(opts.base, f) else f
+      if opts.base? then path.join(opts.base, f) else path.normalize(f)
 
     @file =
       exists: (f) ->
