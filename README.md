@@ -31,7 +31,7 @@ class TestExtension
 
 Writes a given relative path (starting at the roots public output directory) with the given content.
 
-**Example:**    
+**Example:**  
 ```coffee
 compile_hooks:
   write: => @util.write('testing.html', '<p>wow</p>')
@@ -43,7 +43,7 @@ This example will write to `public/testing.html` (or whatever the output directo
 
 Given a minimatch string or array of minimatch strings, this function will grab all files in your roots project that match, excluding directories and files that were ignored by the roots config. Returns an array of [vinyl](https://github.com/wearefractal/vinyl)-wrapped files.
 
-**Example:**     
+**Example:**  
 ```coffee
 constructor: (roots) ->
   util = new RootsUtil(roots)
@@ -59,7 +59,7 @@ This example pulls all non-ignored files in the css directory and tests whether 
 
 Given the path to a source file in a roots project, produces the output path that it will be written to. Accepts an optional extension override (by default will return with the same file extension as the input). Returns a [vinyl](https://github.com/wearefractal/vinyl)-wrapped file object.
 
-**Example:**     
+**Example:**  
 ```coffee
 compile_hooks: ->
   write: (ctx) =>
@@ -69,6 +69,21 @@ compile_hooks: ->
 ```
 
 In this example, we calculate the output path, add a `.min` extension, and pass that path in as the new path to be written. Again, contrived and this utility function can be used in many other ways, just a quick usage example.
+
+#### with_extension(f, ext)
+
+For use with the `detect` function, this is a helper that allows you to easily detect file extensions. Consider this a less powerful, but simpler version of the `files` helper. This function can accept a string or an array.
+
+**Example:**  
+```coffee
+constructor: (@roots) ->
+  @util = new RootsUtil(@roots)
+
+fs: ->
+  category: 'markdown'
+  extract: true
+  detect: (f) => @util.with_extension(f, ['md', 'markdown'])
+```
 
 ### Test Helpers
 
