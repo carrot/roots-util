@@ -37,6 +37,17 @@ describe 'write', ->
     should.have_content(p1)
     should.have_content(p2)
 
+describe 'with_extension', ->
+
+  before (done) -> compile_fixture.call(@, 'with_extension', done)
+
+  it 'with_extension utility should work', ->
+    p1 = path.join(@public, 'match.html')
+    p2 = path.join(@public, 'no-match.foobar')
+    fs.existsSync(p1).should.not.be.ok
+    should.file_exist(p2)
+    should.have_content(p2)
+
 describe 'files', ->
 
   it 'should output a list of non-ignored files', (done) ->
