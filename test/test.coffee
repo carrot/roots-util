@@ -20,7 +20,8 @@ compile_fixture = (fixture_name, done) ->
   @path = path.join(_path, fixture_name)
   @public = path.join(@path, 'public')
   project = new Roots(@path)
-  project.compile().on('error', done).on('done', done)
+  project.on('error', done).on('done', -> done())
+  project.compile()
 
 # tests
 
