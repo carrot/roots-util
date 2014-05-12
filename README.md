@@ -1,7 +1,7 @@
 Roots Util
 ----------
 
-[![npm](https://badge.fury.io/js/roots-util.png)](http://badge.fury.io/js/roots-util) [![tests](https://travis-ci.org/carrot/roots-util.png?branch=master)](https://travis-ci.org/carrot/roots-util) [![dependencies](https://david-dm.org/carrot/roots-util.png?theme=shields.io)](https://david-dm.org/carrot/roots-util) [![Coverage Status](https://coveralls.io/repos/carrot/roots-util/badge.png?branch=master)](https://coveralls.io/r/carrot/roots-util?branch=master)
+[![npm](http://img.shields.io/npm/v/roots-util.svg?style=flat)](http://badge.fury.io/js/roots-util) [![tests](http://img.shields.io/travis/carrot/roots-util/master.svg?style=flat)](https://travis-ci.org/carrot/roots-util) [![dependencies](http://img.shields.io/gemnasium/carrot/roots-util.svg?style=flat)](https://gemnasium.com/carrot/roots-util) [![Coverage Status](http://img.shields.io/coveralls/carrot/roots-util.svg?style=flat)](https://coveralls.io/r/carrot/roots-util?branch=master)
 
 A utility that makes building roots extensions a little easier.
 
