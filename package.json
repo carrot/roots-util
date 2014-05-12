@@ -18,7 +18,7 @@
     "lodash": "2.x",
     "when": "^3.0.1",
     "minimatch": "0.2.x",
-    "mkdirp": "0.3.x",
+    "mkdirp": "0.5.x",
     "glob": "^3.2.9",
     "vinyl": "0.2.x",
     "rimraf": "^2.2.6",
