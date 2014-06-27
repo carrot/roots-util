@@ -15,14 +15,14 @@
   },
   "main": "lib",
   "dependencies": {
+    "colors": "^0.6.2",
+    "fobject": "0.0.x",
+    "glob": "4.x",
     "lodash": "2.x",
-    "when": "^3.0.1",
     "minimatch": "0.3.x",
     "mkdirp": "0.5.x",
-    "glob": "4.x",
-    "vinyl": "0.2.x",
     "rimraf": "^2.2.6",
-    "colors": "^0.6.2"
+    "when": "^3.0.1"
   },
   "devDependencies": {
     "coffee-script": "1.7.x",
