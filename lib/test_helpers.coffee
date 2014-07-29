@@ -60,11 +60,8 @@ class Helpers
         String(fs.readdirSync(dir)) == String(fs.readdirSync(expected))
 
     @project =
-      compile: (Roots, p, cb) ->
-        project = new Roots(_path(p))
-        project.on('error', cb)
-        project.on('done', cb)
-        project.compile()
+      compile: (Roots, p) ->
+        new Roots(_path(p)).compile()
       remove_folders: (matcher) ->
         rimraf.sync(dir) for dir in glob.sync(_path(matcher))
       install_dependencies: (base, cb) ->

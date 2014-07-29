@@ -169,7 +169,7 @@ describe 'helpers', ->
     @h2.directory.matches_dir('helpers/folda', 'helpers/identical_folda').should.be.ok
 
   it 'project.compile should work', (done) ->
-    @h1.project.compile Roots, path.join(_path, 'helpers'), =>
+    @h1.project.compile(Roots, path.join(_path, 'helpers')).then =>
       @h1.directory.exists(path.join(_path, 'helpers/public')).should.be.ok
       done()
 

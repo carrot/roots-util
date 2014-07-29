@@ -143,8 +143,8 @@ tests whether a directory contains a file with a given filename
 ##### directory.matches_dir(path, path2)
 tests whether a directory's contents match that of a second directory
 
-##### project.compile(Roots, path, callback)
-compiles a roots project given the `Roots` class, a path for the project, and a callback
+##### project.compile(Roots, path)
+returns a promise, compiles a roots project given the `Roots` class and a path for the project.
 
 ##### project.remove_folders(minimatchString)
 given a minimatch string, removes all folders that match (good for removing public folders after tests have completed)
