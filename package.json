@@ -1,6 +1,6 @@
 {
   "name": "roots-util",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Jeff Escalante <hello@jenius.me>",
   "description": "a utility for building roots extensions",
   "license": "MIT",
