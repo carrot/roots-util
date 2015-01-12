@@ -61,7 +61,9 @@ class Helpers
 
     @project =
       compile: (Roots, p) ->
-        new Roots(_path(p)).compile()
+        proj = new Roots(_path(p))
+        proj.on('error', ->)
+        proj.compile()
       remove_folders: (matcher) ->
         rimraf.sync(dir) for dir in glob.sync(_path(matcher))
       install_dependencies: (base, cb) ->
