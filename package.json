@@ -15,23 +15,23 @@
   },
   "main": "lib",
   "dependencies": {
-    "colors": "^0.6.2",
-    "glob": "4.x",
-    "lodash": "^2.4.1",
-    "minimatch": "0.4.x",
+    "colors": "1.x",
+    "glob": "5.x",
+    "lodash": "3.x",
+    "minimatch": "2.x",
     "mkdirp": "0.5.x",
-    "rimraf": "^2.2.6",
-    "vinyl": "0.2.x",
-    "when": "^3.0.1"
+    "rimraf": "2.x",
+    "vinyl": "0.5.x",
+    "when": "3.x"
   },
   "devDependencies": {
-    "coffee-script": "1.7.x",
+    "coffee-script": "1.9.x",
     "coveralls": "2.x",
     "istanbul": "0.3.x",
-    "mocha": "1.x",
-    "mocha-lcov-reporter": "0.0.1",
-    "roots": "3.0.0-rc.10",
-    "should": "4.x"
+    "mocha": "2.x",
+    "mocha-lcov-reporter": "0.0.2",
+    "roots": "3.x",
+    "should": "7.x"
   },
   "scripts": {
     "test": "mocha",
