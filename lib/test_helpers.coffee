@@ -61,9 +61,10 @@ class Helpers
 
     @project =
       compile: (Roots, p) ->
+        Roots.analytics(disable: true)
         proj = new Roots(_path(p))
         proj.on('error', ->)
-        proj.compile()
+        proj.compile().then -> Roots.analytics(enable: true)
       remove_folders: (matcher) ->
         rimraf.sync(dir) for dir in glob.sync(_path(matcher))
       install_dependencies: (base, cb) ->
