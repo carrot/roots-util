@@ -87,6 +87,9 @@ describe 'helpers', ->
     @h1 = new RootsUtil.Helpers
     @h2 = new RootsUtil.Helpers(base: _path)
 
+  after ->
+    rimraf.sync(path.join(_path, 'helpers/public'))
+
   describe 'file', ->
     describe 'sync', ->
       it 'exists', ->
