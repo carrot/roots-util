@@ -84,11 +84,13 @@ describe 'output_path', ->
 describe 'helpers', ->
 
   before ->
+    fs.mkdirSync(path.join(_path, 'helpers/empty_folda'))
     @h1 = new RootsUtil.Helpers
     @h2 = new RootsUtil.Helpers(base: _path)
 
   after ->
     rimraf.sync(path.join(_path, 'helpers/public'))
+    rimraf.sync(path.join(_path, 'helpers/empty_folda'))
 
   describe 'file', ->
     describe 'sync', ->
@@ -243,7 +245,7 @@ describe 'helpers', ->
         @h2.directory.has_contents('helpers/folda').should.be.ok
 
       # empty folders ignored by git, so this fails on travis
-      it.skip 'is_empty', ->
+      it 'is_empty', ->
         @h1.directory.is_empty(path.join(_path, 'helpers/empty_folda')).should.be.ok
         @h2.directory.is_empty('helpers/empty_folda').should.be.ok
 
@@ -299,7 +301,7 @@ describe 'helpers', ->
           .then -> done()
 
       # empty folders ignored by git, so this fails on travis
-      it.skip 'is_empty', (done) ->
+      it 'is_empty', (done) ->
         @h1.directory.is_empty(path.join(_path, 'helpers/empty_folda'), async: true)
           .then (t) -> t.should.be.ok
           .then => @h2.directory.is_empty('helpers/empty_folda', async: true)
