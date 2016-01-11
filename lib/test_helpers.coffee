@@ -20,11 +20,15 @@ class Helpers
     _path = (f) ->
       if opts.base? then path.join(opts.base, f) else path.normalize(f)
 
+    _exists = (file) ->
+      try fs.statSync(file)?
+      catch then false
+
     @file =
       exists: (f) ->
-        fs.existsSync(_path(f))
+        _exists(_path(f))
       doesnt_exist: (f) ->
-        !fs.existsSync(_path(f))
+        !_exists(_path(f))
       has_content: (f) ->
         fs.readFileSync(_path(f), 'utf8').length > 0
       is_empty: (f) ->
@@ -45,9 +49,9 @@ class Helpers
         dir = _path(dir)
         try stat = fs.statSync(dir)
         catch err then return false
-        stat.isDirectory() and fs.existsSync(dir)
+        stat.isDirectory() and _exists(dir)
       doesnt_exist: (dir) ->
-        !fs.existsSync(_path(dir))
+        !_exists(_path(dir))
       has_contents: (dir) ->
         fs.readdirSync(_path(dir)).length > 0
       is_empty: (dir) ->
@@ -72,7 +76,7 @@ class Helpers
 
         for d in glob.sync("#{_path(base)}/package.json")
           p = path.dirname(d)
-          if fs.existsSync(path.join(p, 'node_modules')) then continue
+          if _exists(path.join(p, 'node_modules')) then continue
           tasks.push nodefn.call(run, "npm i", { cwd: p })
 
         if tasks.length then console.log 'installing test dependencies...'.grey
