@@ -111,9 +111,9 @@ class Helpers
 
       contains_file: (dir, file, opts = { async: false }) ->
         if opts.async
-          nodefn.call(fs.readdir, _path(dir)).then (d) -> _.contains(d, file)
+          nodefn.call(fs.readdir, _path(dir)).then (d) -> _.includes(d, file)
         else
-          _.contains(fs.readdirSync(_path(dir)), file)
+          _.includes(fs.readdirSync(_path(dir)), file)
 
       matches_dir: (dir, expected, opts = { async: false }) ->
         dir = _path(dir)

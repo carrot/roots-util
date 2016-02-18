@@ -45,7 +45,7 @@ class RootsUtil
       tmp = _.reject(tmp, (f) -> fs.statSync(f).isDirectory())
       tmp = tmp.map((f) => new File(base: @roots.root, path: f))
       tmp = _.reject tmp, (f) =>
-        _.any(@roots.config.ignores, (i) -> minimatch(f.relative, i, { dot: true }))
+        _.some(@roots.config.ignores, (i) -> minimatch(f.relative, i, { dot: true }))
       res = res.concat(tmp)
 
     return res
@@ -74,7 +74,7 @@ class RootsUtil
   ###
 
   with_extension: (file, ext) ->
-    _.contains(Array::concat(ext), path.extname(file.relative).substr(1))
+    _.includes(Array::concat(ext), path.extname(file.relative).substr(1))
 
 module.exports = RootsUtil
 module.exports.Helpers = require('./test_helpers')
