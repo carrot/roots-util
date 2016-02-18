@@ -16,7 +16,7 @@
   "main": "lib",
   "dependencies": {
     "colors": "1.x",
-    "glob": "6.x",
+    "glob": "7.0.0",
     "lodash": "3.x",
     "minimatch": "3.x",
     "mkdirp": "0.5.x",
