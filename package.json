@@ -30,7 +30,7 @@
     "istanbul": "0.4.x",
     "mocha": "2.x",
     "mocha-lcov-reporter": "1.1.0",
-    "roots": "4.0.0",
+    "roots": "4.0.1",
     "should": "8.x"
   },
   "scripts": {
