@@ -31,7 +31,7 @@
     "mocha": "2.x",
     "mocha-lcov-reporter": "1.2.0",
     "roots": "5.0.0",
-    "should": "9.0.1"
+    "should": "9.0.2"
   },
   "scripts": {
     "test": "mocha",
