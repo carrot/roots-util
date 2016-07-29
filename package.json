@@ -17,7 +17,7 @@
   "dependencies": {
     "colors": "1.x",
     "glob": "7.0.5",
-    "lodash": "4.14.0",
+    "lodash": "4.14.1",
     "minimatch": "3.x",
     "mkdirp": "0.5.x",
     "rimraf": "2.x",
