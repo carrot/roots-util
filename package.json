@@ -21,7 +21,7 @@
     "minimatch": "3.x",
     "mkdirp": "0.5.x",
     "rimraf": "2.x",
-    "vinyl": "1.1.x",
+    "vinyl": "1.2.0",
     "when": "3.x"
   },
   "devDependencies": {
