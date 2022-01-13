@@ -15,7 +15,7 @@
   },
   "main": "lib",
   "dependencies": {
-    "colors": "1.x",
+    "@dabh/colors": "1.x",
     "glob": "7.0.5",
     "lodash": "4.15.0",
     "minimatch": "3.x",
